@@ -1,0 +1,19 @@
+
+.reserva_container{
+    padding: 20px;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    background-color: hsla(0, 20%, 8%, 0.102);
+    width: 60%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.reserva_input input{
+    width: 100%;
+    padding: 10px;
+}
