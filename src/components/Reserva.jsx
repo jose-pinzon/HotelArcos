@@ -84,12 +84,7 @@ export const Reserva = () => {
                     <option value="efectivo">Efectivo</option>
                     </select>
                   
-                  <div id="paypalInfo" class="paypal-card">
-                    <div class="paypal-card-content">
-                      <span>PayPal</span>
-                      <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="Logo PayPal"/>
-                    </div>
-                  </div>
+                 
               </div>
 
                 <button type="submit">Reservar</button>
