@@ -45,7 +45,7 @@ export const Header = () => {
                                  ¡Disfruta tu estancia y siéntete como en casa!.</p>
                             <div className="brn-btn">
                               <a href="#" className="btn btn-download">Descargar!</a>
-                              <a href="#" className="btn btn-more">Learn More</a>
+                              <a href="#" className="btn btn-more">Ver mas</a>
                             </div>
                             <div className="overlay-detail">
                               <a href="#feature"><i className="fa fa-angle-down"></i></a>
