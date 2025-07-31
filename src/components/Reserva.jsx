@@ -1,9 +1,22 @@
-
+import Swal from 'sweetalert2'
 import '../css/Reserva.css'
-
+import withReactContent from 'sweetalert2-react-content'
 
 
 export const Reserva = () => {
+
+  const MySwal = withReactContent(Swal)
+
+  const HadleSubmit = ( e ) => {
+    e.preventDefault();
+
+    MySwal.fire({
+       title: "Enviado con exito!",
+        icon: "success",
+        draggable: true
+    })
+  }
+
   return (
      <section id="testimonial" className="wow fadeInUp delay-05s">
       <div class="bg-testicolor">
@@ -11,7 +24,8 @@ export const Reserva = () => {
           <section class="reserva seccion" id="reserva">
             <div class="form-container">
               <h2>Reserva tu habitación</h2>
-              <form id="reservaForm" class="reservaForm">
+
+              <form onSubmit={ HadleSubmit } id="reservaForm" class="reservaForm">
                 <div className="reserva_input">
                   <label for="nombre">Nombre completo:</label>
                     <input type="text" id="nombre" name="nombre" required />

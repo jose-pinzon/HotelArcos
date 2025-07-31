@@ -707,6 +707,7 @@ Responsive media queries
     padding-right: 15px !important;
 }
 }
+
 @media (min-width: 451px) and (max-width: 767px) {
     .service-item, .blog-sec, .wrap-item, .loction-info{
     margin-bottom: 15px;

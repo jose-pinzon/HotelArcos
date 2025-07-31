@@ -8,8 +8,15 @@ import { Reserva } from './components/Reserva'
 import { Blog } from './components/Blog'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
+import { useEffect } from "react";
+import WOW from "wowjs";
 
 function App() {
+
+  useEffect(() => {
+    new WOW.WOW({ animateClass: 'animated', offset: 100 }).init();
+  }, []);
+
 
   return (
     <>

@@ -1,19 +1,37 @@
 
 .reserva_container{
     padding: 20px;
+    color: #ccc;
 }
 .form-container{
     display: flex;
     flex-direction: column;
     padding:20px;
     background-color: hsla(0, 20%, 8%, 0.102);
-    width: 60%;
+    width: 30%;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
 }
 
-.reserva_input input{
+.reserva_input input,select{
+    color: black;
     width: 100%;
     padding: 10px;
 }
+
+
+button[type='submit']{
+    margin-top:1rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: #be9e21;
+    color: white;
+    border: none;
+}
+
+button[type='submit']:focus{
+    box-shadow: 1px 1px 4px inset black;
+}
+
+

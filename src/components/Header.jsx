@@ -1,29 +1,64 @@
-
+import { useEffect, useState } from "react";
+import WOW from "wowjs";
 
 export const Header = () => {
+
+    const [isMobile, setIsMobile] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+      // WOW.js init
+      new WOW.WOW({ animateClass: 'animated', offset: 100 }).init();
+
+      // Scroll navbar
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 50);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
+    const scrollTo = (id) => {
+      const section = document.getElementById(id);
+      section?.scrollIntoView({ behavior: "smooth" });
+    };
+
+
+    const abrirMenu = () => {
+        setIsMobile( isMobile ? false : true )
+    }
+    
+    const showMenu = () => {    
+      return isMobile ? 'navbar-collapse': ' collapse navbar-collapse'
+    }
+    
+
+
+
   return (
      <div className="header">
                   <div className="bg-color">
                     <header id="main-header">
-                      <nav className="navbar navbar-default navbar-fixed-top">
+                      <nav className={`navbar navbar-default navbar-fixed-top ${scrolled ? 'top-nav-collapse' : ''}`}>
                         <div className="container">
                           <div className="navbar-header">
-                            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <button type="button"  className="navbar-toggle" onClick={ () => abrirMenu()  }>
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                           </button>
                             <a className="navbar-brand" href="#">Hotel los<span className="logo-dec"> Arcos</span></a>
                           </div>
-                          <div className="collapse navbar-collapse" id="myNavbar">
+                          <div className={ showMenu() } id="myNavbar">
                             <ul className="nav navbar-nav navbar-right">
                               <li className="active"><a href="#main-header">Inicio</a></li>
-                              <li className=""><a href="#feature">Servicios</a></li>
-                              <li className=""><a href="#service">Nosotros</a></li>
-                              <li className=""><a href="#portfolio">Galeria</a></li>
-                              <li className=""><a href="#testimonial">Reservas</a></li>
-                              <li className=""><a href="#blog">Habitaciones</a></li>
-                              <li className=""><a href="#contact">Contacto</a></li>
+                              <li className=""><a onClick={ () => scrollTo('feature')} >Servicios</a></li>
+                              <li className=""><a onClick={ () => scrollTo('service')}>Nosotros</a></li>
+                              <li className=""><a onClick={ () => scrollTo('portfolio')}>Galeria</a></li>
+                              <li className=""><a onClick={ () => scrollTo('testimonial')}>Reservas</a></li>
+                              <li className=""><a onClick={ () => scrollTo('blog')}>Habitaciones</a></li>
+                              <li className=""><a onClick={ () => scrollTo('contact')}>Contacto</a></li>
                             </ul>
                           </div>
                         </div>
