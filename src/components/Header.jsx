@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import WOW from "wowjs";
 
 export const Header = () => {
 
@@ -8,7 +7,7 @@ export const Header = () => {
 
     useEffect(() => {
       // WOW.js init
-      new WOW.WOW({ animateClass: 'animated', offset: 100 }).init();
+  
 
       // Scroll navbar
       const handleScroll = () => {

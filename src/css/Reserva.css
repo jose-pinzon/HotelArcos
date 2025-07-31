@@ -34,4 +34,8 @@ button[type='submit']:focus{
     box-shadow: 1px 1px 4px inset black;
 }
 
-
+@media  (max-width: 980px) {
+    .form-container{
+        width: 90%;
+    }
+}
