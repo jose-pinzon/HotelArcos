@@ -1,0 +1,36 @@
+
+.login_body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/public/images/a1.jpg'); 
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.login_form{
+    width: 30%;
+    height: 50rem;
+    padding: 4rem;
+    background-color: rgba(81, 115, 145, 0.8);
+    color: white;
+}
+
+.login_input{
+    margin: 1rem 0;
+}
+
+.login_input input{
+    color: black;
+    width: 100%;
+}
+
+input[type='submit']{
+    background-color: rgb(168, 107, 15);
+    border: none;
+    cursor: pointer;
+}
+

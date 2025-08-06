@@ -1,0 +1,16 @@
+
+.content_reserva{
+    padding: 4rem;
+    background-color: rgb(178, 179, 176);
+    height: 100vh;
+}
+
+
+
+.table_reserva{
+ background-color: white;
+}
+
+.table_reserva th{
+    background-color: yellow;
+}

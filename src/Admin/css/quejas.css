@@ -1,0 +1,9 @@
+
+.content_quejas{
+    padding: 4rem;
+}
+
+.table_quejas th{
+    background-color: rgba(28, 28, 201, 0.863);
+    color: white;
+}
