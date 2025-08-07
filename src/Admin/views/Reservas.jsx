@@ -11,28 +11,40 @@ export const Reservas = () => {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Entrada</th>
+              <th scope="col">Salida</th>
+              <th scope="col">Habitacion</th>
+              <th scope="col">personas</th>
+              <th scope="col">niños+12</th>
+              <th scope="col">precio</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td scope="row">1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td>Jesus euan pinzon</td>
+              <td>euanj5070@gmail.com</td>
+              <td>05/08/25</td>
+              <td>07/08/25</td>
+              <td>Doble</td>
+             <td>2</td>
+             <td>0</td>
+              <td>$450</td>
+
             </tr>
-            <tr>
+              <tr>
               <td scope="row">2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td scope="row">3</td>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
+              <td>jose raul euan</td>
+              <td>raulj5070@gmail.com</td>
+              <td>05/08/25</td>
+              <td>07/08/25</td>
+              <td>Doble</td>
+             <td>2</td>
+             <td>2</td>
+              <td>$550</td>
+
             </tr>
           </tbody>
         </table>

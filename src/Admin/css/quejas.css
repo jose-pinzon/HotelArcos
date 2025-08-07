@@ -1,9 +1,11 @@
 
 .content_quejas{
     padding: 4rem;
+     background-color: rgb(178, 179, 176);
+    height: 100vh;
 }
 
 .table_quejas th{
-    background-color: rgba(28, 28, 201, 0.863);
-    color: white;
+    background-color: yellow;
+   color: rgb(93, 95, 91);
 }

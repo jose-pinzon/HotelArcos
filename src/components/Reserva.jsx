@@ -71,7 +71,7 @@ export const Reserva = () => {
                 </div>
             
                 <div className="reserva_input">
-                  <label for="niños">Número de niños:</label>
+                  <label for="niños">Número de niños mayores de 12:</label>
                   <select id="niños" name="niños">
                     <option value="0">0</option>
                     <option value="1">1 niños</option>
