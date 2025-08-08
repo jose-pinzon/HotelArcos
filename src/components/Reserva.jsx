@@ -42,6 +42,7 @@ export const Reserva = () => {
             icon: "success",
             draggable: true
         })
+        setReserva([])
       } catch (error) {
         console.error("Error al agregar documento: ", error);
            MySwal.fire({
