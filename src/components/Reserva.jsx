@@ -3,7 +3,8 @@ import '../css/Reserva.css'
 import withReactContent from 'sweetalert2-react-content'
 import { useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
-import { db } from '../../db/firebase'
+import { db } from '../db/firebase'
+
 
 
 export const Reserva = () => {

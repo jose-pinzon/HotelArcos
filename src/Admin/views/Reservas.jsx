@@ -1,9 +1,10 @@
 
-import { collection, doc, getDocs } from 'firebase/firestore';
+import { collection,  getDocs } from 'firebase/firestore';
 import { HeaderAdmin } from '../components/HeaderAdmin'
 import '../css/Reservas.css'
-import { db } from '../../../db/firebase';
+
 import { useEffect, useState } from 'react';
+import { db } from '../../db/firebase';
 
 export const Reservas = () => {
 
