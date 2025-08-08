@@ -1,8 +1,34 @@
 
+import { collection, doc, getDocs } from 'firebase/firestore';
 import { HeaderAdmin } from '../components/HeaderAdmin'
 import '../css/Reservas.css'
+import { db } from '../../../db/firebase';
+import { useEffect, useState } from 'react';
 
 export const Reservas = () => {
+
+const [reservas, SetReservas] = useState([])
+
+ useEffect(() => {
+    const obtenerDatos = async () => {
+        try {
+        const data = await getDocs(collection(db, "reservas"));
+          
+        const datos = data.docs.map( doc => ({
+          id:doc.id,
+          ...doc.data()
+        })) 
+
+        SetReservas(datos)
+      } catch (error) {
+        console.error("Error al obtener usuarios: ", error);
+      }
+    }
+
+    obtenerDatos()
+},[])
+
+
   return (
     <>
       <div className='content_reserva'>
@@ -22,30 +48,25 @@ export const Reservas = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td scope="row">1</td>
-              <td>Jesus euan pinzon</td>
-              <td>euanj5070@gmail.com</td>
-              <td>05/08/25</td>
-              <td>07/08/25</td>
-              <td>Doble</td>
-             <td>2</td>
-             <td>0</td>
-              <td>$450</td>
+            {
+              reservas.map(reserva => (
+                    <tr key={reserva.id }>
+                      <td scope="row">1</td>
+                      <td>{reserva.nombre}</td>
+                      <td>{reserva.email}</td>
+                      <td>{reserva.fechaEntrada}</td>
+                      <td>{reserva.fechaSalida}</td>
+                      <td>{reserva.NumPersona}</td>
+                      <td>{reserva.NumeroNinios}</td>
+                      <td>{reserva.tipoHabitacion}</td>
+                      <td>{reserva.tipoPago}</td>
+              
+                    </tr>
+              ))
 
-            </tr>
-              <tr>
-              <td scope="row">2</td>
-              <td>jose raul euan</td>
-              <td>raulj5070@gmail.com</td>
-              <td>05/08/25</td>
-              <td>07/08/25</td>
-              <td>Doble</td>
-             <td>2</td>
-             <td>2</td>
-              <td>$550</td>
 
-            </tr>
+            }
+     
           </tbody>
         </table>
        
@@ -54,3 +75,4 @@ export const Reservas = () => {
     </>
   )
 }
+
