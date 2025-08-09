@@ -10,6 +10,7 @@ import { db } from '../db/firebase'
 export const Reserva = () => {
 
   const MySwal = withReactContent(Swal)
+
   const [Reserva, setReserva ] = useState({
       nombre:'',
       email:'',
@@ -19,7 +20,7 @@ export const Reserva = () => {
       NumPersona:0,
       NumeroNinios:0,
       tipoHabitacion:'',
-      tipoPago:null
+      tipoPago:'efectivo'
   })
 
   const handdleChange = ( e ) => {
@@ -176,16 +177,19 @@ export const Reserva = () => {
                     value={Reserva.tipoPago}
                     onChange={handdleChange}
                     >
-                    <option value="">Selecciona un método</option>
+                    <option value="" disabled>Selecciona un método</option>
                     <option value="paypal">PayPal</option>
                     <option value="efectivo">Efectivo</option>
-                    </select>
-                  
-                 
+                    </select>   
+                    { Reserva.tipoPago == 'paypal' &&
+                      <div className='paypal'>
+                          <h1>pagos</h1>
+                      </div>
+                    }
               </div>
-
                 <button type="submit">Reservar</button>
               </form>
+              
               <div class="success-message" id="mensajeExito"></div>
               </div>
           </section>

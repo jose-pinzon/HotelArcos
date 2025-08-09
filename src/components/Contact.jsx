@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom"
 
 
 
 export const Contact = () => {
+  
+  const navigate = useNavigate()
+
+
+
   return (
       <section id="contact" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
@@ -46,10 +52,11 @@ export const Contact = () => {
                     <textarea class="form-control" name="mensage" rows="5" data-rule="required" data-msg="Por favor escribe algo para nosotros" placeholder="Message"></textarea>
                     <div class="validation"></div>
                   </div>
-                  <button type="submit" class="btn btn-primary btn-submit">Enviar</button>
+                  <button type="submit" class="btn btn-primary btn-submit" >Enviar</button>
+                  
                 </div>
               </form>
-
+            <button onClick={() => navigate('admin')}>Admin</button>
             </div>
           </div>
         </div>
@@ -57,3 +64,7 @@ export const Contact = () => {
     </section>
   )
 }
+
+
+
+

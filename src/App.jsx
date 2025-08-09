@@ -8,6 +8,9 @@ import { Reserva } from './components/Reserva'
 import { Blog } from './components/Blog'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
+import Chatbot from './components/chatbot'
+
+
 
 function App() {
 
@@ -23,6 +26,7 @@ function App() {
               <Blog></Blog>
               <Contact></Contact>
               <Footer></Footer>
+              <Chatbot/>
         </div>
     </>
   )
