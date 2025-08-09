@@ -1,6 +1,10 @@
 
+import { useState } from "react";
 
 export const Service = () => {
+  const [mostrarMision, setMostrarMision] = useState(false);
+const [mostrarVision, setMostrarVision] = useState(false);
+
   return (
    <section id="service" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
@@ -15,28 +19,66 @@ export const Service = () => {
             <hr class="bottom-line"/>
           </div>
 
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="service-item">
-              <h3><span>M</span>ision</h3>
-              <p> Brindar a nuestros huéspedes una experiencia de descanso cómoda, segura 
-                y auténtica en el corazón de Izamal, ofreciendo atención personalizada,
-                 instalaciones limpias y un ambiente que refleje la calidez y hospitalidad 
-                 yucateca.
-</p>
-              <a href="">Ver mas...</a>
+          <div className="service-item">
+  <h3><span>V</span>isión</h3>
+  <p>
+    Brindar a nuestros huéspedes una experiencia de descanso cómoda, segura 
+    y auténtica en el corazón de Izamal, ofreciendo atención personalizada,
+    instalaciones limpias y un ambiente que refleje la calidez y hospitalidad yucateca.
+  </p>
+
+  {mostrarVision && (
+    <div className="extra-info">
+      <p>
+        Nuestra misión incluye fomentar la cultura local, apoyar el turismo
+        responsable y garantizar que cada huésped se sienta como en casa.
+      </p>
+      <img
+        src="/images/vision.jpg"
+        alt="Imagen Visión"
+        className="img-fluid rounded"
+      />
+    </div>
+  )}
+
+  <button
+    className="btn btn-primary mt-2"
+    onClick={() => setMostrarVision(!mostrarVision)}
+  >
+    {mostrarVision ? "Ver menos" : "Ver más"}
+  </button>
+</div>
+<div className="service-item">
+  <h3><span>M</span>isión</h3>
+  <p>
+    Brindar a nuestros huéspedes una experiencia de descanso cómoda, segura 
+    y auténtica en el corazón de Izamal, ofreciendo atención personalizada,
+    instalaciones limpias y un ambiente que refleje la calidez y hospitalidad yucateca.
+  </p>
+
+  {mostrarMision && (
+    <div className="extra-info">
+      <p>
+        Nuestra misión incluye fomentar la cultura local, apoyar el turismo
+        responsable y garantizar que cada huésped se sienta como en casa.
+      </p>
+      <img
+        src="/images/mision.jpg"
+        alt="Imagen Misión"
+        className="img-fluid rounded"
+      />
+    </div>
+  )}
+
+  <button
+    className="btn btn-primary mt-2"
+    onClick={() => setMostrarMision(!mostrarMision)}
+  >
+    {mostrarMision ? "Ver menos" : "Ver más"}
+  </button>
+</div>
+
             </div>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="service-item">
-              <h3><span>V</span>ision</h3>
-              <p>Consolidarnos como uno de los hoteles preferidos de la región por nuestra calidad 
-                en el servicio, calidez humana y compromiso con el bienestar
-                 de cada visitante, siendo un referente en turismo local y sostenible en Izamal.
-</p>
-              <a href="">Ver mas...</a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

@@ -772,3 +772,38 @@ body{
     text-align: center;
 }
 }
+/*nostros estilos*/
+.extra-info {
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.extra-info img {
+  max-width: 250px; /* ahora es más pequeña */
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 10px auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/*estilos habitacion ver mas*/
+.lista-servicios {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.lista-servicios li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

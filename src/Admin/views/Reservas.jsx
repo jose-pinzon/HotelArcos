@@ -1,4 +1,3 @@
-
 import { collection,  getDocs } from 'firebase/firestore';
 import { HeaderAdmin } from '../components/HeaderAdmin'
 import '../css/Reservas.css'
@@ -45,7 +44,7 @@ const [reservas, SetReservas] = useState([])
               <th scope="col">Habitacion</th>
               <th scope="col">personas</th>
               <th scope="col">niños+12</th>
-              <th scope="col">precio</th>
+              <th scope="col">Tipo de pago</th>
             </tr>
           </thead>
           <tbody>
@@ -75,18 +74,4 @@ const [reservas, SetReservas] = useState([])
     
     </>
   )
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}  
