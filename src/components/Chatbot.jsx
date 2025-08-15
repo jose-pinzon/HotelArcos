@@ -121,13 +121,14 @@ if ((msg.includes("reservar") || msg.includes("reservación") || msg.includes("r
   return (
     <>
 
-      <button className="btn_bot"onClick={() =>  setHidden(false)}>
+      <button className="btn_bot" onClick={() =>  setHidden(!Hidden)}>
         <picture>
           <img src="img/what-is-bot.webp" alt="no-bot" />
         </picture>
       </button>
       
       <div className={`chat-container ${ show }`}>
+        <button onClick={() =>  setHidden(!Hidden)}>X</button>
         <div id="chat-box" className="content_bot">
           {messages.map((msg, index) => (
             <div
