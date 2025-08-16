@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import '../css/login.css'
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 
 export const Login = () => {
@@ -39,12 +41,27 @@ export const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
+        const MySwal = withReactContent(Swal)
+
+        const user = {
+            email:'jesus44@gmail.com',
+            password:'12345678'
+        }
+
+       
         const validationErrors = validate();
         if (Object.keys(validationErrors).length > 0) {
          setErrors(validationErrors);
         } else {
-            // Submit...
-            navigate('reservas')  
+           if( user.email == values.email && user.password == values.password ){
+                navigate('reservas')  
+            }else{
+                MySwal.fire({  
+                    title: "Datos incorrectos!",  
+                    icon: "error",  
+                    draggable: true  
+                })  
+            }
         }
         
     }
