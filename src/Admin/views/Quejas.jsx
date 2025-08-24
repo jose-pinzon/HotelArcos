@@ -1,11 +1,9 @@
 
-import { HeaderAdmin } from '../components/HeaderAdmin'
 import '../css/quejas.css'
 
 export const Quejas = () => {
   return (
     <div className='content_quejas'>
-        <HeaderAdmin title={'Panel de quejas'} redirect={'reservas'} page={'Reservas'}></HeaderAdmin>
          <table class="table_quejas table table-striped table-hover">
           <thead>
             <tr>

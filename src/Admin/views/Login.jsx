@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import {  useState } from 'react'
 import '../css/login.css'
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -7,6 +7,11 @@ import withReactContent from 'sweetalert2-react-content';
 
 
 export const Login = () => {
+    const generarToken = () => {
+        return Math.random().toString(36).substring(2) + Date.now().toString(36);
+    }
+
+
 
     const navigate = useNavigate();
 
@@ -15,8 +20,6 @@ export const Login = () => {
 
 
     const handleChange  = ( e ) => {
-
-
         setValues({
             ...values,
             [e.target.id]:e.target.value
@@ -54,7 +57,8 @@ export const Login = () => {
          setErrors(validationErrors);
         } else {
            if( user.email == values.email && user.password == values.password ){
-                navigate('reservas')  
+                 localStorage.setItem("token", JSON.stringify((generarToken())))
+                navigate('/admin') 
             }else{
                 MySwal.fire({  
                     title: "Datos incorrectos!",  

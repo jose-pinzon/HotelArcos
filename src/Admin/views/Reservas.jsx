@@ -1,5 +1,4 @@
 import { collection,  getDocs } from 'firebase/firestore';
-import { HeaderAdmin } from '../components/HeaderAdmin'
 import '../css/Reservas.css'
 
 import { useEffect, useState } from 'react';
@@ -13,7 +12,7 @@ const [reservas, SetReservas] = useState([])
     const obtenerDatos = async () => {
         try {
         const data = await getDocs(collection(db, "reservas"));
-          
+      
         const datos = data.docs.map( doc => ({
           id:doc.id,
           ...doc.data()
@@ -24,7 +23,6 @@ const [reservas, SetReservas] = useState([])
         console.error("Error al obtener usuarios: ", error);
       }
     }
-
     obtenerDatos()
 },[])
 
@@ -32,7 +30,6 @@ const [reservas, SetReservas] = useState([])
   return (
     <>
       <div className='content_reserva'>
-          <HeaderAdmin title={'Administrador'} page={'Quejas'} redirect={'quejas'}></HeaderAdmin>
          <table class="table_reserva table table-striped table-hover">
           <thead>
             <tr>

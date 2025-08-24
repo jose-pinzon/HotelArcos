@@ -1,11 +1,7 @@
-import { useNavigate } from "react-router-dom"
 
 
 
 export const Contact = () => {
-  
-  const navigate = useNavigate()
-
 
 
   return (
@@ -56,7 +52,7 @@ export const Contact = () => {
                   
                 </div>
               </form>
-            <button onClick={() => navigate('admin')}>Admin</button>
+           
             </div>
           </div>
         </div>

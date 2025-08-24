@@ -9,10 +9,15 @@ import { Blog } from './components/Blog'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import Chatbot from './components/chatbot'
+import { useNavigate } from 'react-router-dom'
+
+  
 
 
 
 function App() {
+
+  const navigate = useNavigate()
 
   return (
     <>
@@ -27,6 +32,7 @@ function App() {
               <Contact></Contact>
               <Footer></Footer>
               <Chatbot/>
+               <button onClick={() => navigate('admin')}>Admin</button>
         </div>
     </>
   )
