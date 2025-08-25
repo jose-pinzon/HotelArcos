@@ -32,7 +32,8 @@ function App() {
               <Contact></Contact>
               <Footer></Footer>
               <Chatbot/>
-               <button onClick={() => navigate('admin')}>Admin</button>
+              
+              <button className='btn__admin' onClick={() => navigate('admin')}>Admin</button>
         </div>
     </>
   )
